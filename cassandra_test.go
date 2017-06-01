@@ -1584,7 +1584,7 @@ func TestQueryStats(t *testing.T) {
 func TestIterHost(t *testing.T) {
 	session := createSession(t)
 	defer session.Close()
-	iter := session.Query("select peer * system.peers").Iter()
+	iter := session.Query("SELECT * FROM system.peers").Iter()
 
 	// check if Host method works
 	if iter.Host() != nil {
